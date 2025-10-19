@@ -1,0 +1,82 @@
+        $.fn.waypoint.defaults = {
+                context: window,
+                continuous: true,
+                enabled: true,
+                horizontal: false,
+                offset: 800,
+                triggerOnce: true
+        }
+
+        var getImageVersion = function(breakpoints) {
+
+                breakpoints = breakpoints || {};
+
+                // Which transform for each px breakpoint
+                var defaults = {
+                        "default": (breakpoints["default"]) ? breakpoints["default"] : "small",
+                        "400"    : (breakpoints["400"]) ? breakpoints["400"] : "small",
+                        "640"    : (breakpoints["640"]) ? breakpoints["640"] : "medium",
+                        "800"    : (breakpoints["800"]) ? breakpoints["800"] : "large",
+                        "1280"   : (breakpoints["1280"]) ? breakpoints["1280"] : ""
+                }
+
+                var width = window.innerWidth;
+                // small / medium / large / original
+                if (width > 400 && width <= 640){return defaults["400"]} 
+                else if (width > 640 && width <= 800) {return defaults["640"]} 
+                else if (width > 800 && width <= 1280) {return defaults["800"]} 
+                else if (width > 1280){return defaults["1280"]} 
+                else {return (breakpoints.default) ? breakpoints.default : "small"} // default version
+
+        }
+
+        var loadImage = function(element, breakpoints, selector, cssClass) {
+           var $element = element,
+           cssClass = (typeof cssClass == "undefined") ? 'visible' : cssClass;
+           $element.addClass(cssClass);
+           var version = getImageVersion(breakpoints),
+           $selector = (typeof selector == "function") ? selector($element) : $element.find('.smart-load');
+
+           if ( !$selector || !$selector.children() ) { return; }
+                var noscript  = $selector.children('noscript')[0],
+                noscript  = $(noscript).text();
+
+                if (noscript) {
+                   var iMod=(version?version:'');
+                   try { var rx = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+                         var i=rx.exec(noscript);  
+                         if ( iMod && i[1]) { 
+                            var iOrig=i[1];
+                            if ( iOrig.indexOf('/thumb') == -1 &&
+                                 iOrig.indexOf('/filelibrary') == -1) {
+                               var delim='/';
+                               if (iOrig.slice(-1)==delim){delim=''}
+                               i[1]=i[1]+delim+iMod;
+                               var oldImgRegEx = new RegExp(iOrig);
+                               noscript=noscript.replace(oldImgRegEx, i[1]);
+                            }
+                         }
+        //                 console.log("img loaded" + noscript);
+                         $selector.html(noscript);
+                       } catch (e) {
+                         console.log("img error" + e);
+                       }
+                    }
+        };
+
+        var smartLoad = function(element, breakpoints, selector, cssClass)
+        {
+                console.log('Smart Load called');
+                element = (element) ? element : '.card';
+
+                console.log('Smart Load : Found '+$(element).length);
+
+              $(element).waypoint(
+                             function(direction) {
+                                 loadImage($(this), breakpoints, selector, cssClass)
+                             }, {
+                                offset: 700,
+                                triggerOnce:true
+                             })
+
+        };

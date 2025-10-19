@@ -1,0 +1,15 @@
+PLACEHOLDER - CURRICULUM VITAE REQUIRED
+
+Please add the professional CV as a PDF file with the following name:
+CV_JuliaParvia.pdf
+
+The CV should include:
+- Full professional qualifications
+- Clinical experience history
+- Medico-legal training certificates
+- Professional memberships
+- Areas of expertise
+- Publications (if applicable)
+- Contact information
+
+This file should replace this placeholder in the assets/docs/ folder.

@@ -1,0 +1,9 @@
+<svg width="300" height="50" viewBox="0 0 300 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&amp;display=swap');
+    .name { font-family: Georgia, serif; font-size: 22px; fill: #00205B; }
+    .title { font-family: 'Lato', sans-serif; font-size: 14px; fill: #333333; font-weight: 400; }
+  </style>
+  <text x="0" y="25" class="name">Julia Parvia, RM</text>
+  <text x="0" y="42" class="title">Expert Midwife Witness</text>
+</svg>

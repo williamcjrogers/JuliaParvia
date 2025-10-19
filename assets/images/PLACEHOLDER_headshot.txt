@@ -1,0 +1,18 @@
+PLACEHOLDER - PROFESSIONAL HEADSHOT REQUIRED
+
+Please add a professional headshot photograph with the following name:
+headshot.jpg
+
+Image specifications:
+- Professional business attire
+- Neutral, uncluttered background
+- High quality (minimum 800x800 pixels)
+- Portrait orientation
+- Well-lit, clear facial features
+- Optimized for web (ideally under 200KB)
+- Format: JPEG
+
+This file should replace this placeholder in the assets/images/ folder.
+
+Alternative: If you need a temporary placeholder image, you can use a service like:
+https://via.placeholder.com/800x800/F8F9FA/00205B?text=Professional+Headshot
