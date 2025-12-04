@@ -62,7 +62,7 @@ This is a professional website for Julia Parvia, an independent CPR 35 Expert Mi
 
 ### Updating Contact Information
 Edit the following in **all HTML files** (footer section):
-- Email: `julia@expertmidwife.co.uk`
+- Email: `enquiries@juliaparvia.com`
 - Phone: `+44 (0) 1234 567 890`
 
 ### Updating Professional Details
