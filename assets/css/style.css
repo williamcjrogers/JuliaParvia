@@ -512,16 +512,24 @@ li {
     color: var(--color-primary);
 }
 
-.testimonial-card {
-    max-width: 800px;
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.testimonial-card {
     background: var(--color-background);
-    padding: 50px 60px;
+    padding: 40px 45px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     position: relative;
     border: 2px solid var(--color-border);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-card:hover {
@@ -725,6 +733,10 @@ aside .btn {
         color: var(--color-primary);
     }
     
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
     .testimonial-card {
         padding: 30px 25px;
     }
