@@ -498,6 +498,32 @@ li {
     margin-bottom: 0;
 }
 
+/* Credential Color Accents */
+.credential-item.accent-burgundy {
+    background: linear-gradient(135deg, #fff 0%, rgba(128, 0, 32, 0.08) 100%);
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.credential-item.accent-green {
+    background: linear-gradient(135deg, #fff 0%, rgba(0, 128, 64, 0.08) 100%);
+    border-bottom: 3px solid #006633;
+}
+
+.credential-item.accent-purple {
+    background: linear-gradient(135deg, #fff 0%, rgba(102, 51, 153, 0.08) 100%);
+    border-bottom: 3px solid #663399;
+}
+
+.credential-item.accent-teal {
+    background: linear-gradient(135deg, #fff 0%, rgba(0, 128, 128, 0.08) 100%);
+    border-bottom: 3px solid #008080;
+}
+
+.credential-item.accent-navy {
+    background: linear-gradient(135deg, #fff 0%, rgba(0, 32, 91, 0.08) 100%);
+    border-bottom: 3px solid var(--color-primary);
+}
+
 /* Experience Badge */
 .experience-badge {
     width: 100px;
