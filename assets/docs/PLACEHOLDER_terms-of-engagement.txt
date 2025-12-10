@@ -1,0 +1,14 @@
+PLACEHOLDER: Terms of Engagement PDF
+
+This file should be replaced with the actual Terms of Engagement PDF document.
+
+The PDF should include:
+- Standard terms and conditions for expert witness instructions
+- Scope of services
+- Confidentiality provisions
+- Data protection and GDPR compliance
+- Liability limitations
+- Dispute resolution procedures
+- Cancellation policy
+
+Rename the final PDF to: terms-of-engagement.pdf

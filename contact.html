@@ -44,31 +44,173 @@
     <main class="section-padding">
         <div class="container">
             <h1>Contact</h1>
-            
+
             <div class="content-layout">
                 <article>
                     <h2>Get in Touch</h2>
                     <p>I welcome enquiries from solicitors, barristers, and legal organizations requiring expert midwifery witness services. Please contact me to discuss your case, check my availability, or request further information.</p>
 
-                    <div style="background-color: var(--color-background-accent); padding: 30px; margin: 30px 0; border-left: 4px solid var(--color-primary);">
+                    <div class="contact-info-box">
                         <h3>Contact Details</h3>
                         <p><strong>Email:</strong> <a href="mailto:enquiries@juliaparvia.com">enquiries@juliaparvia.com</a></p>
                         <p><strong>Telephone:</strong> <a href="tel:+447794146078">07794 146078</a> or <a href="tel:+447376128239">07376 128239</a></p>
                         <p><strong>Response Time:</strong> I aim to respond to all enquiries within 24 hours (Monday to Friday).</p>
                     </div>
 
-                    <h2>Initial Enquiry Information</h2>
-                    <p>To enable me to conduct a conflict check and provide an accurate estimate, please include the following information in your initial enquiry:</p>
-                    <ul>
-                        <li>Your name, organization, and contact details</li>
-                        <li>Whether you are instructing on behalf of the Claimant, Defendant, or jointly</li>
-                        <li>The names of all parties involved in the case</li>
-                        <li>The NHS Trust or hospital where care was provided</li>
-                        <li>The approximate dates of the incident</li>
-                        <li>A brief summary of the key clinical issues</li>
-                        <li>The type of report required (screening, full CPR 35, or NHS Resolution ENS)</li>
-                        <li>Any specific deadlines or urgent requirements</li>
-                    </ul>
+                    <h2>Submit an Enquiry</h2>
+                    <p>Please complete the form below to enable me to conduct a conflict check and provide an accurate estimate. All fields marked with <span class="required-indicator">*</span> are required.</p>
+
+                    <form id="enquiry-form" class="enquiry-form" action="https://formspree.io/f/your-form-id" method="POST">
+                        <!-- Your Details -->
+                        <fieldset class="form-section">
+                            <legend>Your Details</legend>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name <span class="required-indicator">*</span></label>
+                                    <input type="text" id="contact-name" name="contact_name" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address <span class="required-indicator">*</span></label>
+                                    <input type="email" id="contact-email" name="contact_email" required autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-phone">Telephone Number <span class="required-indicator">*</span></label>
+                                    <input type="tel" id="contact-phone" name="contact_phone" required autocomplete="tel">
+                                </div>
+                                <div class="form-group">
+                                    <label for="organisation">Organisation/Firm <span class="required-indicator">*</span></label>
+                                    <input type="text" id="organisation" name="organisation" required autocomplete="organization">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reference">Your Reference (if applicable)</label>
+                                <input type="text" id="reference" name="your_reference">
+                            </div>
+                        </fieldset>
+
+                        <!-- Case Information -->
+                        <fieldset class="form-section">
+                            <legend>Case Information</legend>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="party-type">Instructing Party <span class="required-indicator">*</span></label>
+                                    <select id="party-type" name="party_type" required>
+                                        <option value="">-- Please select --</option>
+                                        <option value="claimant">Claimant</option>
+                                        <option value="defendant">Defendant</option>
+                                        <option value="joint">Joint Instruction</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="report-type">Report Type Required <span class="required-indicator">*</span></label>
+                                    <select id="report-type" name="report_type" required>
+                                        <option value="">-- Please select --</option>
+                                        <option value="screening">Screening Report</option>
+                                        <option value="cpr35">Full CPR 35 Expert Report</option>
+                                        <option value="ens">NHS Resolution ENS Report</option>
+                                        <option value="supplementary">Supplementary Report</option>
+                                        <option value="joint-statement">Joint Statement</option>
+                                        <option value="other">Other (please specify)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="claimant-name">Claimant Name <span class="required-indicator">*</span></label>
+                                    <input type="text" id="claimant-name" name="claimant_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="defendant-name">Defendant Name(s)</label>
+                                    <input type="text" id="defendant-name" name="defendant_name" placeholder="e.g., NHS Trust name">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nhs-trust">NHS Trust/Hospital <span class="required-indicator">*</span></label>
+                                    <input type="text" id="nhs-trust" name="nhs_trust" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="incident-date">Approximate Date(s) of Incident <span class="required-indicator">*</span></label>
+                                    <input type="text" id="incident-date" name="incident_date" placeholder="e.g., March 2020 or 15/03/2020" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="clinical-issues">Brief Summary of Key Clinical Issues <span class="required-indicator">*</span></label>
+                                <textarea id="clinical-issues" name="clinical_issues" rows="4" required placeholder="Please provide a brief overview of the clinical issues involved in this case..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Deadlines & Additional Information -->
+                        <fieldset class="form-section">
+                            <legend>Deadlines & Additional Information</legend>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="deadline">Deadline for Report (if applicable)</label>
+                                    <input type="date" id="deadline" name="deadline">
+                                </div>
+                                <div class="form-group">
+                                    <label for="urgency">Urgency Level</label>
+                                    <select id="urgency" name="urgency">
+                                        <option value="standard">Standard</option>
+                                        <option value="expedited">Expedited (additional fees may apply)</option>
+                                        <option value="urgent">Urgent (please call to discuss)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="additional-info">Additional Information</label>
+                                <textarea id="additional-info" name="additional_info" rows="3" placeholder="Any other relevant information or specific questions..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="records_available" value="yes">
+                                    <span>Medical records are available for upload</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Consent & Privacy -->
+                        <fieldset class="form-section">
+                            <legend>Consent & Privacy</legend>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="privacy_consent" required>
+                                    <span>I confirm that I have read and agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> <span class="required-indicator">*</span></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="professional_confirm" required>
+                                    <span>I confirm that I am a qualified solicitor or legal representative <span class="required-indicator">*</span></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Hidden fields for form handling -->
+                        <input type="hidden" name="_subject" value="New Expert Witness Enquiry">
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">Submit Enquiry</button>
+                            <button type="reset" class="btn btn-secondary">Clear Form</button>
+                        </div>
+
+                        <div id="form-status" class="form-status" aria-live="polite"></div>
+                    </form>
 
                     <h2>Office Hours</h2>
                     <p>Monday to Friday: 9:00 AM - 5:00 PM</p>
@@ -79,18 +221,35 @@
                 </article>
 
                 <aside>
-                    <h3 style="color: var(--color-primary); font-family: var(--font-body); margin-bottom: 15px;">Quick Actions</h3>
-                    <a href="mailto:enquiries@juliaparvia.com?subject=Expert Witness Enquiry" class="btn btn-primary">Email Enquiry</a>
-                    <a href="assets/docs/Julia Parvia CV.pdf" class="btn btn-accent" target="_blank">View CV</a>
-                    <a href="instructions.html" class="btn btn-primary">View Instructions Process</a>
-                    <a href="services.html" class="btn btn-primary">Services & Expertise</a>
+                    <h3 class="sidebar-heading">Quick Actions</h3>
+                    <a href="mailto:enquiries@juliaparvia.com?subject=Expert Witness Enquiry" class="btn btn-primary">Email Directly</a>
+                    <a href="upload.html" class="btn btn-accent">Upload Documents</a>
+                    <a href="assets/docs/Julia Parvia CV.pdf" class="btn btn-primary" target="_blank">View CV</a>
+                    <a href="instructions.html" class="btn btn-primary">Instructions & Fees</a>
+
+                    <div class="sidebar-section">
+                        <h4>Downloads</h4>
+                        <a href="assets/docs/terms-of-engagement.pdf" class="download-link" target="_blank">
+                            <span class="download-icon">📄</span>
+                            Terms of Engagement
+                        </a>
+                        <a href="assets/docs/fee-schedule.pdf" class="download-link" target="_blank">
+                            <span class="download-icon">📄</span>
+                            Fee Schedule
+                        </a>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Office Hours</h4>
+                        <p class="office-hours">Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                    </div>
                 </aside>
             </div>
 
-            <section style="margin-top: 60px; padding: 40px; background-color: var(--color-background-accent); text-align: center;">
+            <section class="cta-section">
                 <h2>Professional Medico-Legal Services</h2>
                 <p>Providing independent, objective expert witness reports for clinical negligence cases involving midwifery care.</p>
-                <p style="margin-top: 20px;"><strong>CPR 35 Compliant | Impartial | Experienced</strong></p>
+                <p class="cta-tagline"><strong>CPR 35 Compliant | Impartial | Experienced</strong></p>
             </section>
         </div>
     </main>

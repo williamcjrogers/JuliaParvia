@@ -1,0 +1,23 @@
+PLACEHOLDER: Fee Schedule PDF
+
+This file should be replaced with the actual Fee Schedule PDF document.
+
+The PDF should include:
+- Hourly rates:
+  - Report Writing & Document Review: GBP 250 per hour
+  - Conference with Counsel: GBP 250 per hour
+  - Travel Time: GBP 125 per hour
+
+- Fixed fees:
+  - Screening Report: Fixed fee (based on volume)
+
+- Court attendance:
+  - Per day rate: GBP 2,000
+  - Cancellation fees policy
+
+- Payment terms:
+  - 45 days from invoice date
+  - Deferred payment options
+  - VAT information
+
+Rename the final PDF to: fee-schedule.pdf
